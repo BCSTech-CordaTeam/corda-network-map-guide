@@ -22,4 +22,29 @@ Any contracts which you wish to use on the network must be whitelisted. To easil
 
 Any nodes which are to be used as notaries must also be defined ahead of time. To do this you must first generate the nodeInfos for any notaries on the network, then place them in a folder named `nodeInfos`.
 
-MORE TO COME!
+# An Example
+
+1. Generate a new set of certificates by downloading and building the [Corda Certificator](https://github.com/BCSTech-CordaTeam/cordaCertificator), then running `java -jar build/libs/cordaCertificator-0.1-SNAPSHOT.jar -nd newNodes -nn "O=ANode,L=Sydney,C=AU" -nn "O=BNode,L=Sydney,C=AU" -nn "NotaryNode,L=Sydney,C=AU" -rg newRoots -rn "O=ARoot,L=Sydney,C=AU"`. For this particular version of the template your passwords will need to be `truststore`.
+ 
+2. Download the [Yo Cordapp]() sample, and run `gradlew deployNodes` to get the basic node directories up.
+ 
+   1. In each node directory, remove the additional-node-infos directory, the network-parameters file, and the current nodeInfo file
+   
+   2. Replace the certificates directory with the certificates generated in step 1.
+   
+   3. At the bottom of each node.conf, add the following: ```
+keyStorePassword="truststore"
+trustStorePassword="truststore"
+compatibilityZoneURL="TBD"
+devMode=false
+    ```
+ 
+3. In the notary directory, run `java -jar corda.jar --just-generate-node-info`.
+
+4. As per the instructions above, prepare the configuration bundle: Use certificates that you have generated, the jars in the cordapps folder, and the notary's nodeInfo file.
+
+5. Use our solution to deploy a network map with the above configuration bundle.
+
+6. In each node.conf, replace the compatibilityZoneURL with a line similar to `compatibilityZoneURL="http://<DNS>:8080"
+
+7. Start the nodes as per the instructions in yo-cordapp and test that they work!
