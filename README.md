@@ -24,7 +24,7 @@ Any nodes which are to be used as notaries must also be defined ahead of time. T
 
 # An Example
 
-1. Generate a new set of certificates by downloading and building the [Corda Certificator](https://github.com/BCSTech-CordaTeam/cordaCertificator), then running `java -jar build/libs/cordaCertificator-0.1-SNAPSHOT.jar -nd newNodes -nn "O=ANode,L=Sydney,C=AU" -nn "O=BNode,L=Sydney,C=AU" -nn "NotaryNode,L=Sydney,C=AU" -rg newRoots -rn "O=ARoot,L=Sydney,C=AU"`. For this particular version of the template your passwords will need to be `truststore`.
+1. Generate a new set of certificates by downloading and building the [Corda Certificator](https://github.com/BCSTech-CordaTeam/cordaCertificator), then running `java -jar build/libs/cordaCertificator-0.1-SNAPSHOT.jar -nd newNodes -nn "O=ANode,L=Sydney,C=AU" -nn "O=BNode,L=Sydney,C=AU" -nn "O=NotaryNode,L=Sydney,C=AU" -rg newRoots -rn "O=ARoot,L=Sydney,C=AU"`. For this particular version of the template your passwords will need to be `truststore`.
  
 2. Download the [Yo Cordapp]() sample, and run `gradlew deployNodes` to get the basic node directories up.
  
