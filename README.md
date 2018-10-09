@@ -49,3 +49,15 @@ Any nodes which are to be used as notaries must also be defined ahead of time. T
 6. In each node.conf, replace the compatibilityZoneURL with a line similar to `compatibilityZoneURL="http://<VM-DNS>:8080"`
 
 7. Start the nodes as per the instructions in yo-cordapp and test that they work!
+
+# Support
+
+## Technical Support
+
+ * [Ajitha Thayaharan](mailto:Ajitha.Thayaharan@bcstechnology.com.au)
+ * [Daniel Krajnik](mailto:Daniel.Krajnik@bcstechnology.com.au)
+ * [Harrison McKenzie](mailto:Harrison.McKenzie@bcstechnology.com.au)
+
+## Sales Support
+
+ * [Asim Salim](mailto:Asim.Salim@bcstechnology.com.au)
