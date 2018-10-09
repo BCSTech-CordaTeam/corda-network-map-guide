@@ -32,12 +32,13 @@ Any nodes which are to be used as notaries must also be defined ahead of time. T
    
    2. Replace the certificates directory with the certificates generated in step 1.
    
-   3. At the bottom of each node.conf, add the following: ```
-keyStorePassword="truststore"
-trustStorePassword="truststore"
-compatibilityZoneURL="TBD"
-devMode=false
-    ```
+   3. At the bottom of each node.conf, add the following:
+   ```
+   keyStorePassword="truststore"
+   trustStorePassword="truststore"
+   compatibilityZoneURL="TBD"
+   devMode=false
+   ```
  
 3. In the notary directory, run `java -jar corda.jar --just-generate-node-info`.
 
