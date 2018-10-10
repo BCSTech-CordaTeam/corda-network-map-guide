@@ -50,6 +50,10 @@ Any nodes which are to be used as notaries must also be defined ahead of time. T
 
 7. Start the nodes as per the instructions in yo-cordapp and test that they work!
 
+# API
+
+You can view the API Documentation [here](./openapi.html), and an OpenAPI 3.0 specification for the API [here](./cordanetworkmapapi.yaml).
+
 # Support
 
 ## Technical Support
