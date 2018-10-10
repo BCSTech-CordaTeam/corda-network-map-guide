@@ -1,0 +1,127 @@
+openapi: '3.0.0'
+info:
+  version: 1.0.0
+  title: Corda Network Map
+  description: The Corda Network Map API
+  termsOfService: 'urn:tos'
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: http://localhost:8080/network-map
+tags:
+  - name: Corda Network Map API
+paths:
+  /publish:
+    post:
+      tags:
+        - Corda Network Map API
+      summary: Publish a node
+
+      requestBody:
+        description: The Signed NodeInfo from the node
+        required: true
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+
+      description: For the node to upload its signed NodeInfo object to the network map.
+      operationId: publishUsingPOST
+
+      responses:
+        '200':
+          description: Published
+        '400':
+          description: Bad Request
+  /ack-parameters:
+      post:
+        tags:
+          - Corda Network Map API
+        summary: Accept new network parameters
+  
+        description: NOTIMPLEMENTED For the node operator to acknowledge network map that new parameters were accepted for future update.
+        operationId: acknowledgeUsingPOST
+  
+        responses:
+          '200':
+            description: Acknowledged
+          '400':
+            description: Bad Request
+  /:
+      get:
+        tags:
+          - Corda Network Map API
+        summary: Get the network map
+  
+        description: Retrieve the current signed network map object. The entire object is signed with the network map certificate which is also attached.
+        operationId: getUsingGET
+  
+        responses:
+          '200':
+            description: Signed Network Map
+            content:
+              appliation/octet-stream:
+                schema:
+                  type: string
+                  format: binary
+          '400':
+            description: Bad Request
+
+  /node-info/{hash}:
+      get:
+        tags:
+          - Corda Network Map API
+        summary: Get a NodeInfo
+  
+        description: Retrieve a signed NodeInfo as specified in the network map object.
+        operationId: nodeInfoUsingGET
+        
+        parameters:
+          - in: path
+            name: hash
+            description: The hash of the legal name of the node to get the nodeInfo for.
+            required: true
+            schema:
+              type: string
+  
+        responses:
+          '200':
+            description: Signed Node Info
+            content:
+              appliation/octet-stream:
+                schema:
+                  type: string
+                  format: binary
+          '400':
+            description: Bad Request
+
+  /network-parameters/{hash}:
+      get:
+        tags:
+          - Corda Network Map API
+        summary: Get a network parameters file
+  
+        description: Retrieve the signed network parameters (see below). The entire object is signed with the network map certificate which is also attached.
+        operationId: networkParametersUsingGET
+        
+        parameters:
+          - in: path
+            name: hash
+            description: The hash of the network parameters to get.
+            required: true
+            schema:
+              type: string
+  
+        responses:
+          '200':
+            description: Signed Network Parameters
+            content:
+              appliation/octet-stream:
+                schema:
+                  type: string
+                  format: binary
+          '400':
+            description: Bad Request
