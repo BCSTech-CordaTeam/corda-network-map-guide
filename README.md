@@ -1,6 +1,6 @@
 # Corda Custom Network Map Guide
 
-This is a brief guide introducing you to the steps necessary to set up our [Corda Custom Network Map](l i n k    m i s s i n g    f e e l i n g s). We first run over the generic configuration instructions and then delve into a specific step-by-step example.
+This is a brief guide introducing you to the steps necessary to set up our [Corda Custom Network Map](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/bcs-technology.bcs-corda-netmap?tab=Overview). We first run over the generic configuration instructions and then delve into a specific step-by-step example.
 
 # Preparing the Configuration Bundle
 
