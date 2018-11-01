@@ -7,8 +7,7 @@ This is a brief guide introducing you to the steps necessary to set up our [Cord
 <video controls
        src="output.mp4"
        type="video/mp4"
-       width="300"
-       height="200">
+       width="100%">
     <a href="output.mp4">Download Here</a>
 </video>
 
