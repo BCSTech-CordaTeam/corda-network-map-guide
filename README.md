@@ -2,6 +2,16 @@
 
 This is a brief guide introducing you to the steps necessary to set up our [Corda Custom Network Map](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/bcs-technology.bcs-corda-netmap?tab=Overview). We first run over the generic configuration instructions and then delve into a specific step-by-step example.
 
+# Video Guide
+
+<video controls
+       src="output.mp4"
+       type="video/mp4"
+       width="300"
+       height="200">
+    <a href="output.mp4">Download Here</a>
+</video>
+
 # Preparing the Configuration Bundle
 
 To start a custom network map you need to provide a configuration bundle to the template. At the moment, we accept this bundle as a 7-zip file, encrypted with a password for validation & safety purposes. 
